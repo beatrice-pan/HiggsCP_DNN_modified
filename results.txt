@@ -1,0 +1,252 @@
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-All
+0.6915732431311582
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-1.0
+0.5572973209188015
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-1.1
+0.5009559616468263
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-2.0
+0.5675965167735203
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-2.1
+0.5637833727615332
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-2.2
+0.5620191761652117
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-3.0
+0.6888687280616144
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-4.0
+0.6924280250393116
+TrainFeaturesA1A1 Job. Dropout 0.2. Method:  Variant-4.1
+0.6237913313087721
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-All
+0.7429091486745452
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-1.0
+0.596063513297504
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-1.1
+0.6005413645635459
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-2.0
+0.6193749126679531
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-2.1
+0.6151615777265625
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-2.2
+0.6147999175543503
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-3.0
+0.7429126382160995
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-4.0
+0.7432919725528613
+TrainFeaturesA1Rho Job. Dropout 0.2. Method:  Variant-4.1
+0.6917223675722269
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-All
+0.7633425448880911
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-1.0
+0.6543800066766778
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-1.1
+0.6546013996562355
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-2.0
+0.6606302771770657
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-2.1
+0.65917045863121
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-2.2
+0.6595140266696679
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-3.0
+0.7637181125664907
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-4.0
+0.7633391116071474
+TrainFeaturesRhoRho Job. Dropout 0.2 Method:  Variant-4.1
+0.7281649275903037
+TrainBeta a1a1 Job. Beta:  0.2
+0.6786087233816077
+TrainBeta a1a1 Job. Beta:  0.4
+0.6517187886950474
+TrainBeta a1a1 Job. Beta:  0.6
+0.6227794041387354
+TrainBeta a1a1 NODROP Job. Beta:  0.2
+0.7303457594162448
+TrainBeta a1a1 NODROP Job. Beta:  0.4
+0.690806652141575
+TrainBeta a1a1 NODROP Job. Beta:  0.6
+0.6526719733867532
+TrainBeta a1rho NODROP Job. Beta:  0.2
+0.7618274585500845
+TrainBeta a1rho NODROP Job. Beta:  0.4
+0.732277722655473
+TrainBeta a1rho NODROP Job. Beta:  0.6
+0.7012258100750314
+TrainBeta rhorho NODROP Job. Beta:  0.2
+0.7717465433755099
+TrainBeta rhorho NODROP Job. Beta:  0.4
+0.7458669535472975
+TrainBeta rhorho NODROP Job. Beta:  0.6
+0.7211687995840088
+TrainBeta rhorho Job. Beta:  0.2
+0.7529495413142282
+TrainBeta rhorho Job. Beta:  0.4
+0.7317124733079463
+TrainBeta rhorho Job. Beta:  0.6
+0.7084263473129464
+TrainBeta a1rho Job. Beta:  0.2
+0.7316551547268293
+TrainBeta a1rho Job. Beta:  0.4
+0.7069950512548335
+TrainBeta a1rho Job. Beta:  0.6
+0.6801245358619719
+TrainSmear a1a1 Job. Beta:  0.2 Sigma: 0
+0.6774332873635686
+TrainSmear a1a1 Job. Beta:  0.4 Sigma: 0
+0.6513757036283321
+TrainSmear a1a1 Job. Beta:  0.6 Sigma: 0
+0.6245875008940278
+TrainSmear a1a1 Job. Beta:  0.2 Sigma: 0.2
+0.6762545011595523
+TrainSmear a1a1 Job. Beta:  0.4 Sigma: 0.2
+0.6511322704739784
+TrainSmear a1a1 Job. Beta:  0.6 Sigma: 0.2
+0.6256660130133296
+TrainSmear a1a1 Job. Beta:  0.2 Sigma: 0.4
+0.6723506943867031
+TrainSmear a1a1 Job. Beta:  0.4	Sigma: 0.4
+0.6491837044392126
+TrainSmear a1a1 Job. Beta:  0.6	Sigma: 0.4
+0.6220357114095107
+TrainSmear a1rho Job. Beta:  0.2 Sigma: 0
+0.7326165648529813
+TrainSmear a1rho Job. Beta:  0.4 Sigma: 0
+0.7069387359412276
+TrainSmear a1rho Job. Beta:  0.6 Sigma: 0
+0.6824731290265793
+TrainSmear a1rho Job. Beta:  0.2 Sigma: 0.2
+0.7318517685600534
+TrainSmear a1rho Job. Beta:  0.4 Sigma: 0.2
+0.7070373195107869
+TrainSmear a1rho Job. Beta:  0.6 Sigma: 0.2
+0.6794439504627965
+TrainSmear a1rho Job. Beta:  0.2 Sigma: 0.4
+0.729801585730784
+TrainSmear a1rho Job. Beta:  0.4 Sigma: 0.4
+0.7066371201315171
+TrainSmear a1rho Job. Beta:  0.6 Sigma: 0.4
+0.6792924813666492
+TrainSmear rhorho Job. Beta:  0.2 Sigma: 0
+0.7539048806411639
+TrainSmear rhorho Job. Beta:  0.4 Sigma: 0
+0.7315159294904972
+TrainSmear rhorho Job. Beta:  0.6 Sigma: 0
+0.7100257179793372
+TrainSmear rhorho Job. Beta:  0.2 Sigma: 0.2
+0.7526234808092589
+TrainSmear rhorho Job. Beta:  0.4 Sigma: 0.2
+0.7312435541576128
+TrainSmear rhorho Job. Beta:  0.6 Sigma: 0.2
+0.7100942240526041
+TrainSmear rhorho Job. Beta:  0.2 Sigma: 0.4
+0.7509660609862725
+TrainSmear rhorho Job. Beta:  0.4 Sigma: 0.4
+0.7294157692392573
+TrainSmear rhorho Job. Beta:  0.6 Sigma: 0.4
+0.7091610075007391
+TrainSmear a1a1 NODROP Job. Beta:  0.2 Sigma: 0
+0.7280526089122081
+TrainSmear a1a1 NODROP Job. Beta:  0.4 Sigma: 0
+0.691986092250685
+TrainSmear a1a1 NODROP Job. Beta:  0.6 Sigma: 0
+0.6562436058263805
+TrainSmear a1a1 NODROP Job. Beta:  0.2 Sigma: 0.2
+0.7259410517175662
+TrainSmear a1a1 NODROP Job. Beta:  0.4 Sigma: 0.2
+0.6911150847890488
+TrainSmear a1a1 NODROP Job. Beta:  0.6 Sigma: 0.2
+0.6536460736631605
+TrainSmear a1a1 NODROP Job. Beta:  0.2 Sigma: 0.4
+0.7201883776632624
+TrainSmear a1a1 NODROP Job. Beta:  0.4 Sigma: 0.4
+0.6834481477635607
+TrainSmear a1a1 NODROP Job. Beta:  0.6 Sigma: 0.4
+0.6484674169842537
+TrainSmear a1rho NODROP Job. Beta:  0.2 Sigma: 0
+0.7609065461362952
+TrainSmear a1rho NODROP Job. Beta:  0.4 Sigma: 0
+0.7321324172819909
+TrainSmear a1rho NODROP Job. Beta:  0.6 Sigma: 0
+0.7015439845020119
+TrainSmear a1rho NODROP Job. Beta:  0.2 Sigma: 0.2
+0.7602201282274168
+TrainSmear a1rho NODROP Job. Beta:  0.4 Sigma: 0.2
+0.7321541728224004
+TrainSmear a1rho NODROP Job. Beta:  0.6 Sigma: 0.2
+0.7022108110747651
+TrainSmear a1rho NODROP Job. Beta:  0.2 Sigma: 0.4
+0.7583377278724566
+TrainSmear a1rho NODROP Job. Beta:  0.4 Sigma: 0.4
+0.7297961025585886
+TrainSmear a1rho NODROP Job. Beta:  0.6 Sigma: 0.4
+0.700974874989248
+TrainSmear rhorho Job. NODROP Beta:  0.2 Sigma: 0
+0.7711585611333082
+TrainSmear rhorho Job. NODROP Beta:  0.4 Sigma: 0
+0.7461995132832782
+TrainSmear rhorho Job. NODROP Beta:  0.6 Sigma: 0
+0.7215852937300004
+TrainSmear rhorho Job. NODROP Beta:  0.2 Sigma: 0.2
+0.7706984954435602
+TrainSmear rhorho Job. NODROP Beta:  0.4 Sigma: 0.2
+0.7460263686101172
+TrainSmear rhorho Job. NODROP Beta:  0.6 Sigma: 0.2
+0.7204684735612314
+TrainSmear rhorho Job. NODROP Beta:  0.2 Sigma: 0.4
+0.7676226235636087
+TrainSmear rhorho Job. NODROP Beta:  0.4 Sigma: 0.4
+0.7444449422438963
+TrainSmear rhorho Job. NODROP Beta:  0.6 Sigma: 0.4
+0.7205969416787804
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-All
+0.7756296859806739
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-1.0
+0.604781730512415
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-1.1
+0.6066014850028476
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-2.0
+0.6286962469023087
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-2.1
+0.6227323637081845
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-2.2
+0.6235101163538376
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-3.0
+0.7763479032357395
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-4.0
+0.7755787894887375
+TrainFeaturesA1Rho Job. Dropout 0.0. Method:  Variant-4.1
+0.7351054207543208
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-All
+0.750122287940998
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-1.0
+0.5652365666966095
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-1.1
+0.5702343902180387
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-2.0
+0.5863604656591664
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-2.1
+0.5789060539841188
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-2.2
+0.5719956347170447
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-3.0
+0.7477779709224605
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-4.0
+0.7513630348122364
+TrainFeaturesA1A1 Job. Dropout 0.0. Method:  Variant-4.1
+0.6807442981244327
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-All
+0.782310503489569
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-1.0
+0.6572069481737957
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-1.1
+0.657460420810725
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-2.0
+0.6635613241408608
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-2.1
+0.661993868027967
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-2.2
+0.6623827751765534
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-3.0
+0.7842675617430436
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-4.0
+0.7826605419196886
+TrainFeaturesRhoRho Job. Dropout 0. Method:  Variant-4.1
+0.7524678453856314

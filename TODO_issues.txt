@@ -1,0 +1,298 @@
+17.08.2019
+============
+
+--> calculate_metrics from anal_py/anal_utils.py
+    not corectly calculates mean of calc_pred_argmaxs_distances
+    because is taking absolute value!
+    change definition so the abs() is taken latter when needed,
+    eg. for calculating fractions in a given bin.
+
+--> original weights wt are not normalised to probabilities.
+     Int. (A + B cos(alpha) + C sin(alpha) ) = 2 pi A
+    predicted weights by DNN are normalised to probablities.
+    Check that weights stored in files
+        softmax_calc_w.npy
+        softmax_preds_w.npy
+    are normalised to unity integral  before storing, so it
+    does not have to be corrected at the analysis level.
+
+    Check that normalised weights are used for calculating
+    loss function.
+    
+    Same problem in case of option with regression
+
+16.08.2019
+============
+
+--> problem with reproducing oracle predictions by multi-class classifiation code.
+    AUC=0.728 and not 0.782 for scalar-pseudoscalar case
+    also present in case of nc=3, which should be equivalent results from binary classification.
+
+    could be tested when with scripts:
+    anal_py/anal_roc_auc_rhorho_nc3.py
+    anal_py/anal_roc_auc_rhorho_nc20.py
+
+    Likely, it comes from not correctly extended definitions
+    anal_py/anal_utils.py
+       def test_roc_auc()
+       def calculate_roc_auc()
+       def evaluate_roc_auc()
+
+   and their original versions in
+       src_py/tf_model.py
+
+   Note, that with original weights there is no problem and note the difference
+   with the implementation used for calculating AUC
+   see in scripts:
+       anal_py/ anal_oracle_rhorho.py
+
+
+19.06.2019
+===========
+
+0) URGENT!!!
+   test with option FILTER=TRUE everywhere
+
+   I have tried some of your methods and realised that data_len
+   has different value when applid to filtered events and
+   pred_arg_maxs and calc_arg_maxs
+
+   For events with filter=false, popts are not predicted, which is
+   not the case for popts calculated. Should be solved when preparing
+   comparison between "calc" and "pred" . As it is now we are just
+   not comparing weights or popts for the same events.
+
+   I realised that there is some mismatch, early impelemntation was giving
+   event with filter=false weight=0, new one is removing event from the
+   list of events? Which one is better? The second one would not require
+   propagating filter bit down the analysis stream and it will become part
+   of data preparation. So probbaly it is good choice to be made.
+   In any case should be made consistent everywhere in the code. 
+
+   URGENT!!!    
+   The new version of calc_min_distances  is wrong in my opinion, I got
+   values which are oscilating in sign for odd and even number of
+   num_classes!!! 
+
+
+1) Comments to python script:
+   msadowski-multiclass/notebooks/Analyze_popts_regression.ipynb
+
+  --> wrong naming for method
+      def generate_predicted_classes(num_classes, popts):
+
+      --> it is not "generating" but "calculating,
+          generating is a naming reserved to case where random number is used
+      --> "predicted_classes"
+          in fact method is calculating not predicted classes but weights
+	  given arrays of popts
+
+     Please correct name according to what this method is doing
+	  
+  --> cell below "L2 distance"
+      ptl.ylabel('l1')  should be ptl.ylabel('l2')
+
+  --> plots for "mixing angle"
+      clearly "calc_popts" and "pred_popts" have different relative
+      normalisation, probably "pred_popts" are normalised to unit area
+      of the weight_fun (??) Please check and correct because then any shape
+      comparison used as metrics is misleading
+
+  --> cell below "Distance between maximums"
+      why the "fminbound" method used here? Wouldn't it be more consistent
+      to use he same method as in the multi-class case for finding argument
+      at which functon has its maximum.
+
+  --> last cell, last figure
+      calculate and plot also the mean position of the peak and the half width
+      of the distribution in the peak region.
+      
+      
+2) Try uniform methods used for calculating metrics between
+
+         Analyze_popts_regression.ipynb
+     and
+         Analyze_different_class_num.ipynb
+
+   create util.py library with methods used by both notebooks
+   and import relevant method from there
+
+3) Try to uniform plots/tables from both notebooks so we can directly compare
+   performance of both approaches:
+   multi-class classification vs regression on functional form. 
+
+4) The "calc_min_distances"  method is different in both notebooks than used
+   2 weeks ago, was it bug for treateaning the edges or it is cosmetic change?
+
+
+6.06.2019
+==========
+
+1) added scripts for plotting/printing ROC-AUC in case of two-class dscrimination.
+   Problem: Oracle predictions to do reach control performance value from original
+            analysis. WHY?
+	    Same observed for different feauture lists.
+
+2) add test which un standard binary-classification problem on the same date, reproduce
+   results from previous papers
+
+
+
+5.06.2019
+==========
+
+1) Unclear role of "WEIGHTS_SUBSET" and why it is coupled to "NUM_CLASSES".
+
+2) Comment "For Michal" refers to his recent commits in the branch msadowski-multiclass
+
+     -->  new version of  "calculate_metrics" method should be explained,
+          looks not correct to me.
+
+     -->  "run is separate processes", don't understand this option.
+           Please explain.
+
+     What below is the version for nootebook only?
+     --> "calculate_classification_metrics" returns now np.array of arrays,
+          but it is nor reflected in the total_train module of your code.
+	  It is expecting individual arrays being returned.
+          Is it OK or not?
+	        
+    -->   implementing "evaluate_test" is good to have, but not used (?)
+          however it is not evaluating "oracle" predictions, right?
+	  or it is, we cannot make anything better.
+	        
+    -->   implementing "calculate_roc_auc" is good to have, but not used (?)
+
+
+3) Move train_xxx.py to src_py directory, and still be able to call it
+   from main.py. How to do it?
+
+
+31.05.2019
+==========
+
+1) Move to run on prometheus + increase runs to 25 epochs
+
+2) What about restricting range to [0, pi], would it help? confuse performance?
+
+3) Looking more into tf_model:
+
+    -->  Predicted weights are normalised to probability and calculated no!!!!
+         Important correction to calculating metric!!!
+
+    -->  Total_train is returning "train_accs", "valid_accs"
+         we do nothing with it? Not used? not stored?
+
+    -->  Loss value not monitored for further tests, could be stored as .npy?
+         is it normalised to the number of classes?
+
+    -->  Why saving: softmax_calc_w.npy, softmax_preds_w.npy
+         inside the loop "for i in range(epochs)"
+	 aren't we interested in the last iteration?
+
+4) Problem affecting performance metrices:
+      "p" in normalised t unity, weights are not
+       should be cleaned in few places consistently
+       normalise weights at initialisation?
+
+5) Store in .npy format quantities for monitoring nn learning,
+   so we can confirm  choices for nn architecture to avoid overfitting.
+   Add scripts monitoring learning process, like in the past publications.
+
+6) Stacking metrics is a good idea, see anal_scripts
+
+    metrics_Variant_1_1 = np.stack(metrics_Variant_1_1)
+
+   but what to do if number of classes is not uniformly ditributed,
+   i.e. only few are simulated like: 2, 4, 10, 25, 50, 100
+
+7) Final performance should be evaluated on test data.
+   Evaluation performed on the model on which valid_accs is maximal.
+   DONE
+
+
+30.05.2019
+==========
+
+1) How in the script
+       ploting_scripts/plot_softmax_rhorho.py
+       
+   correct calculation of delta
+   delt_argmax = np.argmax(calc_w[:], axis=1) - np.argmax(preds_w[:], axis=1)
+   taking into account periodicity of phiCP
+   
+   Increase in tails should dissapear, and RMS would improve
+   Instead of (mean, RMS), can we fit Gauss distribution?
+
+2) How in the script 
+       anal_scripts/anal_rhorho_Variant_All_class_num.py
+       
+   correct calculation of mean delta in the metric
+   taking into account periodicity of phiCP
+
+   
+
+29.05.2019
+==========
+
+1) Added a1rho and a1a1 channels, but not yet configured well.
+   Have to introduce redundant cpmix_utils.py download_data.py
+   because file names are not configurable.
+   DONE: use suffix from args.TYPE
+
+2) Problem with
+     -- a1rho: Variant-2.0, Variant-2.1  >  nan from loss function
+     -- a1a1: still cannot configure loading data
+
+3) I would like to have more structured project:
+      HiggsCP/main.py
+      HiggsCP/src_scripts/xxx.py
+      HiggsCP/anal_scripts/yyy.py
+      
+   how to tell in python directory where the source is?
+   
+   DONE: utworzyc pusty  plik __init__.py w podkartotece src_scripts
+         import src_scripts.xxx.py
+
+4) not clear why it is not working
+
+   python main.py -e 5 -t nn_a1rho -i A1RHO_DATA -f Variant-4.1 --num_classes 2
+
+   environmental variable $A1RHO_DATA is fine, still cannot find data, should not
+   be trying to donwload them. Looks that args.IN is not propagated correctly by the
+   os system. Is not understanding that should use $A1RHO_DATA and not A1RHO_DATA
+
+   DONE: use "-i $A1RHO_DATA"
+
+5) add rafjoz@gmail.com  for pull/push rights into erichter branches
+   DONE
+
+6) clean up for calculating features of Variant-2X and Variant-3X families if not used,
+   clean up also for: "RuntimeWarning: invalid value encountered in sqrt"
+
+7) for plotting metrics (anal_scripts), horizontal axes do not represent number of classes,
+   but the stacking count. How to convert?
+   DONE
+
+23.05.2019
+==========
+
+1) harmonise standards for control printouts
+    -- introduce sterring arg.DEBUG (?)
+    -- used "print" "write", "msg service"
+
+2) plotting scripts better configurable
+   for directories of input/output
+   automatize
+   DONE: partially, fine for a moment
+
+3) understand code+formulas for loss function in case of "soft"
+
+4) multi-class --> two class
+   can we quantify better differences/similarities of performance
+   which approach does what?
+
+5) oracle-predictions for multi-class, how to define
+
+6) better statistical quantification for multi-class performance 
+
