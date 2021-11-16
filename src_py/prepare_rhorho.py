@@ -13,7 +13,7 @@ def read_raw_all(kind, args):
     all_weights = []
     for letter in ["a"][:args.DATASETS]:
         name = os.path.join(data_path, "pythia.H.rhorho.1M.%s.%s.outTUPLE_labFrame" % (letter, kind))
-        print letter, name
+        print(letter, name)
         data, weights = read_raw_root(name, num_particles=7)
         all_data += [data]
         all_weights += [weights]

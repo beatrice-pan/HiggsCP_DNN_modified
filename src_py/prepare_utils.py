@@ -20,7 +20,7 @@ def read_raw_root(name, num_particles):
 
     # Ensure that there are `num_particles` particles for each example.
     assert ids == range(0, num_particles * len(ids), num_particles)
-    print len(lines), len(ids)*num_particles
+    print(len(lines), len(ids)*num_particles)
     # If the numbers are not equal, check the last lines of pythia file 
     assert len(lines) == num_particles * len(ids)
     lines = [line.strip() for line in lines]

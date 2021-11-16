@@ -151,8 +151,8 @@ def preprocess_data(args):
         Z_argmaxs = np.zeros((Z_len, 1))
         Z_c012s   = np.zeros((Z_len, 3))
         Z_c012s[:,0] = 1
-       	Z_c012s[:,1] = 0
-       	Z_c012s[:,2] = 0
+        Z_c012s[:,1] = 0
+        Z_c012s[:,2] = 0
         Z_hits_c0s = np.zeros((data_len, num_classes))
         Z_hits_c1s = np.zeros((data_len, num_classes))
         Z_hits_c2s = np.zeros((data_len, num_classes))
@@ -165,7 +165,7 @@ def preprocess_data(args):
         data = np.vstack([data,Z_data])
         weights = np.vstack([weights,Z_weights])
         argmaxs = np.vstack([argmaxs,Z_argmaxs])
-       	c012s = np.vstack([c012s,Z_c012s])
+        c012s = np.vstack([c012s,Z_c012s])
         if args.HITS_C012s == "hits_c0s" :
             hits_c012s = np.vstack([hits_c012s,Z_hits_c0s])
         elif args.HITS_C012s == "hits_c1s" :
